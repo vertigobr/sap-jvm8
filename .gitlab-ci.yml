@@ -1,0 +1,10 @@
+stages:
+  - deploy
+
+Git MIRROR:
+  stage: deploy
+  script:
+    - git config -l
+    - cat .gitlab-ci.yml
+    - git push --all https://$GITHUB_DEPLOY_USER:$GITHUB_DEPLOY_PASSWORD@github.com/vertigobr/sap-jvm8.git
+
